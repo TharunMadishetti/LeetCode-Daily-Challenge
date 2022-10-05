@@ -10,10 +10,13 @@ If depth == 1 that means there is no depth depth - 1 at all, then create a tree 
    
 
 #### Example 1:  
-  
+![image](https://user-images.githubusercontent.com/91481732/193982286-0b16711d-e9dc-4a87-b77a-eac27892dc7c.png)  
+ 
 Input: root = [4,2,6,3,1,5], val = 1, depth = 2  
 Output: [4,1,1,2,null,null,6,3,1,5]  
 #### Example 2:   
+![image](https://user-images.githubusercontent.com/91481732/193982341-5cecd35b-5b2a-4a5b-94c6-101613e76783.png)  
+
 Input: root = [4,2,null,3,1], val = 1, depth = 3  
 Output: [4,2,null,1,1,3,null,null,1]  
   
