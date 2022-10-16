@@ -5,7 +5,8 @@ You are given an integer array jobDifficulty and an integer d. The difficulty of
 Return the minimum difficulty of a job schedule. If you cannot find a schedule for the jobs return -1.  
 
 #### Example 1:  
-  
+  ![image](https://user-images.githubusercontent.com/91481732/196028012-92e60862-98cf-4804-a194-f59794b93aae.png)
+
   
 Input: jobDifficulty = [6,5,4,3,2,1], d = 2  
 Output: 7  
