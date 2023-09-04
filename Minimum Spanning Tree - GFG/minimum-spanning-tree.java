@@ -34,48 +34,46 @@ public class Main{
 // User function Template for Java
 
 class Solution{
-    static class Pair
+    static int[] p,sz;
+    static int findp(int u)
     {
-        int x,c;
-        Pair(int x,int c)
+        if(p[u]==u)
+        return u;
+        return p[u]=findp(p[u]);
+    }
+    static void UnionBySize(int u,int v)
+    {
+        int ulpu=findp(u);
+        int ulpv=findp(v);
+        if(sz[ulpu]>sz[ulpv])
         {
-            this.x=x;
-            this.c=c;
+            p[ulpv]=ulpu;
+            sz[ulpu]+=sz[ulpv];
+        }
+        else
+        {
+            p[ulpu]=ulpv;
+            sz[ulpv]+=sz[ulpu];
         }
     }
 	static int spanningTree(int V, int E, int e[][]){
 	    // Code Here. 
-	    ArrayList<ArrayList<ArrayList<Integer>>> g=new ArrayList<>();
+	    p=new int[V];
 	    for(int i=0;i<V;i++)
-	    g.add(new ArrayList<>());
+	    p[i]=i;
+	     sz=new int[V];
+	    Arrays.fill(sz,1);
+	    Arrays.sort(e,(ea,eb)->ea[2]-eb[2]);
+	    int tc=0;
 	    for(int i=0;i<E;i++)
 	    {
-	        ArrayList<Integer> l=new ArrayList<>();
-	        l.add(e[i][1]);
-	        l.add(e[i][2]);
-	        g.get(e[i][0]).add(l);
-	        l=new ArrayList<>();
-	        l.add(e[i][0]);
-	        l.add(e[i][2]);
-	        g.get(e[i][1]).add(l);
-	    }
-	    PriorityQueue<Pair> pq=new PriorityQueue<>((x,y)->x.c-y.c);
-	    int tc=0;
-	    boolean[] vis=new boolean[V];
-	    pq.add(new Pair(0,0));
-	    while(!pq.isEmpty())
-	    {
-	        int u=pq.peek().x;
-	        int c=pq.peek().c;
-	        pq.remove();
-	        if(vis[u])
-	        continue;
-	        vis[u]=true;
-	        tc+=c;
-	        for(ArrayList<Integer> edge:g.get(u))
+	        int u = e[i][0];
+	        int v = e[i][1];
+	        int d = e[i][2];
+	        if(findp(u)!=findp(v))
 	        {
-	            if(!vis[edge.get(0)])
-	            pq.add(new Pair(edge.get(0),edge.get(1)));
+	            tc+=d;
+	            UnionBySize(u,v);
 	        }
 	    }
 	    return tc;
