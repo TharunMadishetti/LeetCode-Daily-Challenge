@@ -30,7 +30,7 @@ class GfG
 
 class Solution
 {
-    String colName (long n)
+     String colName (long n)
     {
         // your code here
         StringBuilder res=new StringBuilder("");
