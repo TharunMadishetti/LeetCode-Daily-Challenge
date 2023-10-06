@@ -68,7 +68,8 @@ class Solution
 {
     public static void rearrange(Node odd)
     {
-        // add your code
+        if(odd.next==null || odd.next.next==null)
+        return ;
         Node t = odd;
         while(t.next!=null)
         t=t.next;
@@ -84,5 +85,6 @@ class Solution
             l.next=re;
             t=t.next;
         }
+        // add your code here
     }
 }
