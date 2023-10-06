@@ -68,9 +68,7 @@ class Solution
 {
     public static void rearrange(Node odd)
     {
-        // add your code here
-        if(odd.next==null || odd.next.next==null)
-        return ;
+        // add your code
         Node t = odd;
         while(t.next!=null)
         t=t.next;
