@@ -1,17 +1,27 @@
 class Solution {
-    public int maxDotProduct(int[] nums1, int[] nums2) {
-        int[][][] dp=new int[nums1.length][nums2.length][2];
+    public int maxDotProduct(int[] a, int[] b) {
+        int[][][] dp=new int[a.length+1][1+b.length][2];
         for(int[][] x:dp)
             for(int[] y:x)
                 Arrays.fill(y,Integer.MIN_VALUE);
-//         for(int i=a.length-1;i>=0;i--)
-//         {
-//             for(int j=b.length-1;j>=0;j--)
-//             {
-                
-//             }
-//         }
-        return solve(nums1,nums2,0,0,0,dp);
+        for(int i=a.length;i>=0;i--)
+        {
+            for(int j=b.length;j>=0;j--)
+            {
+                if(i==a.length || j==b.length)
+                {
+                    dp[i][j][0]=Integer.MIN_VALUE;
+                    dp[i][j][1]=0;
+                    continue;  
+                } 
+        int pick = a[i]*b[j];
+                int c=0;
+dp[i][j][0]=Math.max(pick+dp[i+1][j+1][1],Math.max(dp[i+1][j][c],dp[i][j+1][c]));
+                c=1;
+                dp[i][j][1]=Math.max(pick+dp[i+1][j+1][1],Math.max(dp[i+1][j][c],dp[i][j+1][c]));
+            }
+        }
+        return dp[0][0][0];
     }
     public int solve(int[] a,int[] b,int i,int j,int c,int[][][] dp)
     {
