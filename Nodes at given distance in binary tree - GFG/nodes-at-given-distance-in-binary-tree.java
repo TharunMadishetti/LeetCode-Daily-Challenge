@@ -109,7 +109,7 @@ class GFG
 class Solution
 {
     public static ArrayList<Integer> KDistanceNodes(Node root, int target , int k)
-      {
+     {
         // return the sorted list of all nodes at k dist
         Node key = findKey(root, target);
         HashMap<Node, Node> map = new HashMap<>();
