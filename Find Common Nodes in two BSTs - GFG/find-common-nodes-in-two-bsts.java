@@ -24,7 +24,7 @@ class Node{
 class Solution
 {
     //Function to find the nodes that are common in both BST.
-	static ArrayList<Integer> ans;
+static ArrayList<Integer> ans;
     static HashSet<Integer> set;
     Solution(){
         ans = new ArrayList<>();
