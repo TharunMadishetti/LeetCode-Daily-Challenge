@@ -39,12 +39,10 @@ class GFG {
 // } Driver Code Ends
 
 
-
-
 // User function Template for Java
 
 class Solution {
-    List<Integer> l;
+List<Integer> l;
 
     List<Integer> eventualSafeNodes(int V, List<List<Integer>> adj) {
         l = new ArrayList<>();
