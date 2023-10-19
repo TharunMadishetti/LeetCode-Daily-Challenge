@@ -38,7 +38,7 @@ class DriverClass
 
 class Solution
 {
-   int nodeLevel(int V, ArrayList<ArrayList<Integer>> adj, int X)
+  int nodeLevel(int V, ArrayList<ArrayList<Integer>> adj, int X)
     {
         // code here
         // System.out.println(adj);
