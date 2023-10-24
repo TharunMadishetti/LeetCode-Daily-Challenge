@@ -21,7 +21,7 @@ class GFG{
 
 //User function Template for Java
 
-    class Solution{
+class Solution{
     static int palindromicPartition(String str)
     {
         
