@@ -15,8 +15,7 @@ class CheckBit
     static boolean checkKthBit(int n, int k)
     {
         // Your code here
-        // System.out.println(1<<k);
-        return 0!=((1<<k)&n);
+        return ((1<<k)&n)!=0;
     }
     
 }
