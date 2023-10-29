@@ -16,17 +16,7 @@ class CheckBit
     {
         // Your code here
         // System.out.println(1<<k);
-        
-        k++;
-        int c=1;
-        while(n!=0 && c<=k)
-        {
-            if(n%2==1 && c==k)
-            return true;
-            c++;
-            n/=2;
-        }
-        return false;
+        return 0!=((1<<k)&n);
     }
     
 }
