@@ -47,30 +47,32 @@ class Array {
 // } Driver Code Ends
 
 
+
+
 //User function Template for Java
 
 class Solution{
    
     // Function for finding maximum and value pair
     public long sumXOR (int arr[], int n) {
-        //Complete the function
-         long result = 0;
-        for (int i = 0; i < 32; i++) {
-            int count0 = 0;
-            int count1 = 0;
-            int bit = 1 << i;
-
-            for (int j = 0; j < n; j++) {
-                if ((arr[j] & bit) == 0) {
-                    count0++;
-                } else {
-                    count1++;
-                }
+        int[] c=new int[33];
+        for(int i=0;i<n;i++){
+            int j=0;
+            while(arr[i]!=0){
+                if(arr[i]%2!=0)
+                c[j]++;
+                j++;
+                arr[i]/=2;
             }
-            result += (long) count0 * count1 * (1 << i);
         }
-
-        return result;
+        long ans=0;
+        // System.out.println(Arrays.toString(c));
+        for(int i=0;i<33;i++)
+        {
+            ans+=(long)c[i]*(n-c[i])*(1<<i);
+        }
+        return ans;
+        //Complete the function
     }
     
     
